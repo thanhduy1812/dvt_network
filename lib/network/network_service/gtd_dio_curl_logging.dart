@@ -44,7 +44,8 @@ class GtdDioInterceptor extends Interceptor {
     // add a breakpoint here so all errors can break
     try {
       // MARK: remove comment
-      NetWorkLogger.i('REQUEST:${requestOptions.method}--------------------------');
+      NetWorkLogger.i(
+          'REQUEST:${requestOptions.method}--------------------------');
       NetWorkLogger.i(_cURLRepresentation(requestOptions));
     } catch (err) {
       log('unable to create a CURL representation of the requestOptions');

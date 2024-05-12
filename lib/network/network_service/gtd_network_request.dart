@@ -35,8 +35,11 @@ class GTDNetworkRequest {
         return MapEntry(key, value.toString());
       }
     });
-    Uri uri =
-        Uri(scheme: enpoint.uri.scheme, host: enpoint.uri.host, path: enpoint.uri.path, queryParameters: finalQuery);
+    Uri uri = Uri(
+        scheme: enpoint.uri.scheme,
+        host: enpoint.uri.host,
+        path: enpoint.uri.path,
+        queryParameters: finalQuery);
     return uri;
   }
 }

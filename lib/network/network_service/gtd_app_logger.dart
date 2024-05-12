@@ -42,7 +42,8 @@ class NetWorkLogger {
   }
 
   static int getLogLevel() {
-    NetWorkLogger.v("Current Log Level is ${_getPriorityText(_currentLogLevel)}");
+    NetWorkLogger.v(
+        "Current Log Level is ${_getPriorityText(_currentLogLevel)}");
     return _currentLogLevel;
   }
 

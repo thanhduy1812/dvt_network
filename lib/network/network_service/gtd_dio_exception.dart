@@ -7,7 +7,10 @@ class GtdDioException implements Exception {
   late String status;
   late String stackTrace;
 
-  GtdDioException.fromError({this.message = "Unknown Error", this.code = "UNKNOWN", this.stackTrace = ''});
+  GtdDioException.fromError(
+      {this.message = "Unknown Error",
+      this.code = "UNKNOWN",
+      this.stackTrace = ''});
 
   GtdDioException.fromDioError(DioException dioError) {
     switch (dioError.type) {
