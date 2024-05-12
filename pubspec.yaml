@@ -1,7 +1,8 @@
 name: gtd_network
-description: "A new Flutter package project."
-version: 0.0.1
-homepage:
+description: "Network helper for request CRUD."
+version: 1.0.0
+homepage: https://github.com/thanhduy1812/dvt_network
+repository: https://github.com/thanhduy1812/dvt_network
 
 environment:
   sdk: ">=3.3.3 <4.0.0"
@@ -10,7 +11,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  collection: any
   dio: ^5.3.3
 
 dev_dependencies:
