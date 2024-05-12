@@ -1,3 +1,3 @@
-library dvt_network;
+library gtd_network;
 
 export 'network/network.dart';
