@@ -1,6 +1,6 @@
 name: gtd_network
 description: "Network helper for request CRUD."
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/thanhduy1812/dvt_network
 repository: https://github.com/thanhduy1812/dvt_network
 
