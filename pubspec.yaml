@@ -1,6 +1,6 @@
 name: gtd_network
 description: "Network helper for request CRUD."
-version: 1.0.3
+version: 1.0.5
 homepage: https://github.com/thanhduy1812/gtd_network
 repository: https://github.com/thanhduy1812/gtd_network
 

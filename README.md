@@ -30,7 +30,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  gtd_network: ^1.0.4
+  gtd_network: ^1.0.5
 ```
 
 ## Usage
