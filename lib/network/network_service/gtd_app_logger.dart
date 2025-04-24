@@ -1,8 +1,8 @@
 import 'dart:developer';
 
-class NetWorkLogger {
+class GtdLogger {
   // ignore: constant_identifier_names
-  static const String _DEFAULT_TAG_PREFIX = "DVTNetwork";
+  static const String _DEFAULT_TAG_PREFIX = "GTDNetwork";
 
   ///use Log.v. Print all Logs
   ///ignore: constant_identifier_names
@@ -42,7 +42,7 @@ class NetWorkLogger {
   }
 
   static int getLogLevel() {
-    NetWorkLogger.v(
+    GtdLogger.v(
         "Current Log Level is ${_getPriorityText(_currentLogLevel)}");
     return _currentLogLevel;
   }

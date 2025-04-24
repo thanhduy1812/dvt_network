@@ -1,17 +1,17 @@
 name: gtd_network
 description: "Network helper for request CRUD."
-version: 1.0.2
-homepage: https://github.com/thanhduy1812/dvt_network
-repository: https://github.com/thanhduy1812/dvt_network
+version: 1.0.3
+homepage: https://github.com/thanhduy1812/gtd_network
+repository: https://github.com/thanhduy1812/gtd_network
 
 environment:
-  sdk: ">=3.3.3 <4.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=3.7.0 <4.0.0"
+  flutter: ">=3.7.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  dio: ^5.3.3
+  dio: ^5.8.0+1
 
 dev_dependencies:
   flutter_test:

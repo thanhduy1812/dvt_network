@@ -12,7 +12,7 @@ class GtdDioInterceptor extends Interceptor {
 
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) {
-    NetWorkLogger.e('Error: $err \n ${err.response}');
+    GtdLogger.e('Error: $err \n ${err.response}');
     _renderCurlRepresentation(err.requestOptions);
 
     return handler.next(err); //continue
@@ -28,12 +28,12 @@ class GtdDioInterceptor extends Interceptor {
     }
 
     // MARK: remove comment
-    NetWorkLogger.i('RESPONSE:--------------------------');
-    NetWorkLogger.i(
+    GtdLogger.i('RESPONSE:--------------------------');
+    GtdLogger.i(
         'RESPONSE:${response.requestOptions.method} ${response.statusCode} \n ${response.requestOptions.uri}');
     // logJson(tag: "APICall", json: response.data);
 
-    NetWorkLogger.d(response.toString());
+    GtdLogger.d(response.toString());
 
     // logJson(tag: "RESPONSE: ", json: response.data as Object);
 
@@ -44,9 +44,9 @@ class GtdDioInterceptor extends Interceptor {
     // add a breakpoint here so all errors can break
     try {
       // MARK: remove comment
-      NetWorkLogger.i(
+      GtdLogger.i(
           'REQUEST:${requestOptions.method}--------------------------');
-      NetWorkLogger.i(_cURLRepresentation(requestOptions));
+      GtdLogger.i(_cURLRepresentation(requestOptions));
     } catch (err) {
       log('unable to create a CURL representation of the requestOptions');
     }
@@ -83,7 +83,7 @@ class GtdDioInterceptor extends Interceptor {
     // final jsonString = json.encode(json);
     const encoder = JsonEncoder.withIndent('  ');
     final prettyString = encoder.convert(json);
-    NetWorkLogger.d('$tag\n $prettyString');
+    GtdLogger.d('$tag\n $prettyString');
   }
 
   String prettyJson(dynamic json) {

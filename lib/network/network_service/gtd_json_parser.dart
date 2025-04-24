@@ -1,26 +1,34 @@
 // import 'gtd_app_logger.dart';
-// import 'gtd_dio_exception.dart';
+// import 'gtd_error.dart';
 
-// class JsonParser {
-//   static T jsonToModel<T>(T Function(Map<String, dynamic> map) fromJson, Map response) {
-//     try {
-//       return fromJson(response.cast());
-//     } on TypeError catch (e) {
-//       NetWorkLogger.e('Trace: ${e.stackTrace} \nErrorMess: ${e.toString()}', tag: "JsonParser - jsonToModel");
-//       throw GtdDioException.fromError(code: "1001_TYPE_ERROR", message: e.stackTrace.toString());
-//     } catch (e) {
-//       rethrow;
-//     }
-//   }
+import 'package:gtd_network/network/network_service/network_service.dart';
 
-//   static List<T> jsonArrayToModel<T>(T Function(Map<String, dynamic> map) fromJson, List data) {
-//     try {
-//       return data.map((e) => fromJson((e as Map).cast())).toList();
-//     } on TypeError catch (e) {
-//       NetWorkLogger.e('Trace: ${e.stackTrace} \nErrorMess: ${e.toString()}', tag: "JsonParser - jsonArrayToModel");
-//       throw GtdDioException.fromError(code: "1001_TYPE_ERROR", message: e.stackTrace.toString());
-//     } catch (e) {
-//       rethrow;
-//     }
-//   }
-// }
+class GtdJsonParser {
+  static T jsonToModel<T>(T Function(Map<String, dynamic> map) fromJson, Map response) {
+    try {
+      return fromJson(response.cast());
+    } on TypeError catch (e) {
+      GtdLogger.e('Trace: ${e.stackTrace} \nErrorMess: ${e.toString()}', tag: "JsonParser - jsonToModel");
+      throw GtdError.custom(
+         "Type error during JSON parsing", 
+         errorCode: "1001_TYPE_ERROR"
+      );
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  static List<T> jsonArrayToModel<T>(T Function(Map<String, dynamic> map) fromJson, List data) {
+    try {
+      return data.map((e) => fromJson((e as Map).cast())).toList();
+    } on TypeError catch (e) {
+      GtdLogger.e('Trace: ${e.stackTrace} \nErrorMess: ${e.toString()}', tag: "JsonParser - jsonArrayToModel");
+      throw GtdError.custom(
+         "Type error during JSON array parsing", 
+         errorCode: "1001_TYPE_ERROR"
+      );
+    } catch (e) {
+      rethrow;
+    }
+  }
+}
