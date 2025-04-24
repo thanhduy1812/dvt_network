@@ -11,7 +11,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-# DVT Network Package
+# VNLook Network Package
 
 A Flutter package for simplified API communication using Dio HTTP client.
 
@@ -30,7 +30,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  dvt_network: ^1.0.0
+  gtd_network: ^1.0.4
 ```
 
 ## Usage
