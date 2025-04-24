@@ -83,8 +83,9 @@ class ExampleApiService {
       
       // Example of custom error handling based on status code
       if (gtdError.statusCode == 422) {
-        // Handle validation errors
-        final validationErrors = _extractValidationErrors(e.response?.data);
+        // Handle validation errors - parse the validation errors
+        // but we're not using them in the custom error anymore since we removed data field
+        _extractValidationErrors(e.response?.data); // Just call the function without storing the result
         throw GtdError.custom(
           'Validation failed',
           statusCode: gtdError.statusCode,
